@@ -40,3 +40,8 @@
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     height: 200px;
 }
+@media only screen and (max-width: 600px){
+    .single{
+        display: block;
+    }
+}

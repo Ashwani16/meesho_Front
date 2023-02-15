@@ -1,7 +1,7 @@
 import axios from "axios"
 import { LOGIN_SUCC, LOGOUT, SET_USER_LOADING } from "./actioTypes"
 
-const set_user_loading=(payload:Boolean)=>{
+export const set_user_loading=(payload:Boolean)=>{
     return {
         type:SET_USER_LOADING,
         payload

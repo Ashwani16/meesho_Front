@@ -2,7 +2,7 @@ import { ProductsBar } from "../ProductsBar"
 import { Sidebar } from "../Sidebar"
 
 const Products =()=>{
-    return <div className="flex">
+    return <div className="flexm">
         <Sidebar/>
         <ProductsBar/>
     </div>

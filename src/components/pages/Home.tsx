@@ -14,7 +14,7 @@ const Home=()=>{
         <img className="homeImg" src={img4} alt="img4"/>
         <img className="homeImg" src={img5} alt="img5"/>
         <img className="homeImg" src={img6} alt="img6"/>
-        <div className="flex">
+        <div className="flexm paddin_20">
             
         <Sidebar/>
         <ProductsBar/>

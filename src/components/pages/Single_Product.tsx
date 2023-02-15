@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 import {BiRightArrow} from "react-icons/bi"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
-import { Add_View_Product } from "../../redux/allProducts/action"
+import { Add_View_Product, Get_Data_from_API } from "../../redux/allProducts/action"
 import { AddToCart } from "../../redux/cart/action"
 
 const Single_Product=()=>{
@@ -18,9 +18,8 @@ const Single_Product=()=>{
     
     
     if(Object.keys(product).length === 0){
-        axios.get(`http://localhost:8080/${type}/${id}`).then((res)=>{
-            dispatch(Add_View_Product(res.data))
-        })
+        dispatch(Get_Data_from_API())
+        
     }
 const addToCartHandler=()=>{
     dispatch(AddToCart(product))
@@ -37,7 +36,7 @@ const buyNowHandler=()=>{
             <div className="bigImage">
             <img src={product?.img1}/> 
             <Divider /> 
-                <div className="flex1">
+                <div className="flex1 width_max">
                     <button onClick={addToCartHandler} className="button"><AiOutlineShoppingCart /> Add to Cart</button>
                     <button onClick={buyNowHandler} className="button pinkbutton"><BiRightArrow/> Buy Now</button>
                 </div> 
