@@ -2,13 +2,15 @@ import { Box,Center,Stack, Square, Text } from "@chakra-ui/layout"
 import {PhoneIcon,PlusSquareIcon,CheckIcon, Search2Icon} from '@chakra-ui/icons'
 import { Flex,Image,Divider , InputLeftElement,InputGroup,InputRightElement,Input} from "@chakra-ui/react"
 import { Link, useNavigate } from "react-router-dom"
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineShoppingCart,AiOutlineMenu } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import Navbar2 from "./Navbar2";
 import { useDispatch } from "react-redux";
 import { log_out } from "../redux/user/action";
+import { useState } from "react";
 
 const Navbar=()=>{
+  const [menu,setMenu]=useState(false)
   const dispatch=useDispatch()
   const navigate=useNavigate()
   const cartClickHandler=()=>{
@@ -20,12 +22,12 @@ const Navbar=()=>{
   const homeClickHandler=()=>{
     navigate("/")
   }
-    return <div className="navbar" style={{position: "sticky"}}>
+    return <div className="navbar" >
        <Center justifyContent='space-between' >
   <Center width='50%'  >
-    <Image onClick={homeClickHandler} height='60px' src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' width='23%'/>
+    <Image onClick={homeClickHandler} width={['60px','90px',"110px"]} src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' />
     <Stack width='60%' >
-  <InputGroup  border='1px solid grey' borderRadius='3px' bg='white' width='100%'>
+  <InputGroup  border='1px solid grey' borderRadius='3px' bg='white' width={['100%',"100px"]} >
     <InputLeftElement
       bg='white'
       pointerEvents='none'
@@ -38,9 +40,9 @@ const Navbar=()=>{
 </Stack>
   </Center>
   <Center height='30px' gap='15px' width='42%' >
-    <Text><PlusSquareIcon/>Download App
+    <Text className="download" ><PlusSquareIcon/>Download App
 </Text>
-<Divider orientation='vertical' />
+<Divider className="download" orientation='vertical' />
 <Link to="login">Log-in </Link> 
 <Divider orientation='vertical' />
 <Center margin='10px' gap='10px'>
@@ -48,10 +50,13 @@ const Navbar=()=>{
         <button onClick={logout}>Log-Out</button>
         
     </Center>
-    <Center onClick={cartClickHandler} gap='5px'>
-        <AiOutlineShoppingCart/>
-        <Text>Cart</Text>
+    <Center className="crtb"  onClick={cartClickHandler} gap='5px'>
+        <AiOutlineShoppingCart />
+        
     </Center>
+    <div className="menu">
+      <AiOutlineMenu onClick={()=>{setMenu((pre)=>{return !pre})}} />
+    </div>
 </Center>
 
   </Center>
@@ -59,6 +64,7 @@ const Navbar=()=>{
 </Center> 
 <Divider />
 <Navbar2/>
+{menu&&<Navbar2 class="nvv22" />}
         {/* <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
         <Link to="/signUp">SinUp</Link>

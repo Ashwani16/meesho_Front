@@ -13,8 +13,7 @@ margin-top: 30px;
 margin-bottom: 40px;
 }
 .navbar{
-  position: fixed;
-  
+  position: sticky;
 }
 .sm{
   display: flex;
@@ -288,7 +287,17 @@ p{
 .flexm{
   display: flex;
 }
+.menu{
+  display: none;
+
+}
 @media only screen and (max-width: 600px) {
+  .menu{
+    display: block;
+  }
+  .maxL{
+    display: none;
+  }
   .ProductsBar{
     grid-template-columns: 1fr;
   }
@@ -318,4 +327,20 @@ p{
   .cart{
     display: block;
   }
+  .download{
+    display: none;
+  }
+  .crtb{
+    display: none;
+  }
+  
 }
+.nvv22{
+  display: block;
+  
+}
+.nvv22>.nav2{
+  display: block;
+
+}
+

@@ -11,9 +11,10 @@ import Men from "./Navbar2/Men"
 import WomenEthnic from "./Navbar2/WomenEthnic"
 import WomenWestern from "./Navbar2/WomenWestern"
 
-const Navbar2=()=>{
+const Navbar2=(prop:any)=>{
+    const Class:string=prop.class;
     const [isvisible,setIsvisible]=useState(<></>)
-   return <div onMouseLeave={()=>{setIsvisible(<></>)}}>
+   return <div className={`maxL ${Class}`} onMouseLeave={()=>{setIsvisible(<></>)}}>
         <div  className="flex nav2">
             <div onMouseEnter={()=>{setIsvisible(<WomenEthnic/>)}} >Women Ethnic</div>
             <div onMouseEnter={()=>{setIsvisible(<WomenWestern/>)}}> Women Western</div>
