@@ -12,7 +12,7 @@ const Address =()=>{
     const buttonHandler=()=>{
         navigate("/payment")
     }  
-    return <div className="flex1 width60 spacebtw">
+    return <div className="flex1 width60 address spacebtw">
        <div className="border width65">
             <label>Contact Details</label><br/>
             <input className="input1" placeholder="Name"/><br/>

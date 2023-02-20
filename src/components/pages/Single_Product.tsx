@@ -1,5 +1,6 @@
 import { Divider } from "@chakra-ui/react"
 import axios from "axios"
+import { useState } from "react"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import {BiRightArrow} from "react-icons/bi"
 import { useDispatch, useSelector } from "react-redux"
@@ -9,6 +10,7 @@ import { AddToCart } from "../../redux/cart/action"
 
 const Single_Product=()=>{
     const {type,id}=useParams()
+    const [added,setAdded]=useState(false)
     const product =useSelector((state:any)=>{
         return state.productReducer.singleProduct
     })
@@ -22,6 +24,7 @@ const Single_Product=()=>{
         
     }
 const addToCartHandler=()=>{
+    setAdded(true)
     dispatch(AddToCart(product))
     
 }
@@ -37,8 +40,8 @@ const buyNowHandler=()=>{
             <img src={product?.img1}/> 
             <Divider /> 
                 <div className="flex1 width_max">
-                    <button onClick={addToCartHandler} className="button"><AiOutlineShoppingCart /> Add to Cart</button>
-                    <button onClick={buyNowHandler} className="button pinkbutton"><BiRightArrow/> Buy Now</button>
+                    <button disabled={added} onClick={addToCartHandler} className="button"><AiOutlineShoppingCart  /> {added?"Added":"Add to Cart"}</button>
+                    <button onClick={buyNowHandler} className="button pinkbutton"  ><BiRightArrow/> Buy Now</button>
                 </div> 
                 <Divider /> 
             </div>

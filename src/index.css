@@ -301,6 +301,15 @@ p{
   .ProductsBar{
     grid-template-columns: 1fr;
   }
+  .address{
+    display: block;
+  }
+  .address>div{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .flexm{
     display: block;
   }
@@ -341,6 +350,6 @@ p{
 }
 .nvv22>.nav2{
   display: block;
-
+  text-align: right;
 }
 
