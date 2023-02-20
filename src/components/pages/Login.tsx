@@ -24,7 +24,7 @@ const LogIn =()=>{
         dispatch(login({phoneNo,password}))
     }
     return <div className="userinfo">
-        <input className="userinfo_input" value={phoneNo} onChange={(e)=>{setPhoneNo(e.target.value)}} placeholder="Enter Your Mobile No."/><br/>
+        <input width="60%" className="userinfo_input" value={phoneNo} onChange={(e)=>{setPhoneNo(e.target.value)}} placeholder="Enter Your Mobile No."/><br/>
         <input className="userinfo_input" value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Enter Your PassWord"/><br/>
         <button className="userinfo_button" onClick={clickHandler}>Submit</button>
         <p id="smallt">not have an account <span className="ca"><Link state={loacation.state} to="/signUp">create account</Link></span></p>

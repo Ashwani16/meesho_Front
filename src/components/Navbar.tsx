@@ -27,13 +27,13 @@ const Navbar=()=>{
   <Center width='50%'  >
     <Image onClick={homeClickHandler} width={['60px','90px',"110px"]} src='https://images.newindianexpress.com/uploads/user/imagelibrary/2022/6/9/w900X450/Meesho_logo.png?w=400&dpr=2.6' />
     <Stack width='60%' >
-  <InputGroup  border='1px solid grey' borderRadius='3px' bg='white' width={['100%',"100px"]} >
+  <InputGroup  border='1px solid grey' borderRadius='3px' bg='white' width={['100%',"200px","400px"]} >
     <InputLeftElement
       bg='white'
       pointerEvents='none'
       children={<Search2Icon  color='gray.300' />}
     />
-    <Input border='1px transparent grey' type='search' placeholder='Try Sari,Kurti or Search by Product CODE' />
+    <Input width={["100px","200px","300px"]} border='1px transparent grey' type='search' placeholder='Try Sari,Kurti or Search by Product CODE' />
   </InputGroup>
 
   
